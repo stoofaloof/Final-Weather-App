@@ -20,3 +20,48 @@ function currentWeather(response) {
 }
 
 axios.get(apiUrl).then(currentWeather);
+
+// Set Current Date and Time
+
+let now = new Date();
+
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+let weekday = weekdays[now.getDay()];
+let month = months[now.getMonth()];
+let day = now.getDate();
+let year = now.getFullYear();
+let hour = now.getHours();
+let minutes = now.getMinutes().toString().padStart(2, "0");
+
+function currentDate(datestamp) {
+  document.querySelector(
+    "#date-display"
+  ).innerHTML = `${weekday}, ${month} ${day}, ${year}`;
+  document.querySelector("#time-display").innerHTML = `${hour}:${minutes}`;
+}
+
+console.log(currentDate(now));
