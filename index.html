@@ -22,30 +22,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="mainBody">
-        <h1 id="city-display">Toronto</h1>
-        <h2 id="country-display">Canada</h2>
-        <ul class="topDisplay">
-          <li id="dateDisplay">Tuesday, July 13, 2021</li>
-          <li id="timeDisplay">9:43</li>
-          <li id="noteDisplay">Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <span id="main-temp">20 </span
-            ><span id="temp-unit"
-              ><a href="" class="tempConvert">°C</a> |
-              <a href="" class="tempConvert">°F</a></span
-            >
-          </div>
-          <div class="col-6">
-            <ul class="sideDisplay">
-              <li>Precipitation: <span id="precipitation">40%</span></li>
-              <li>Wind Speed: <span id="precipitation">20 km/h</span></li>
-              <li>Humidity: <span id="precipitation">65%</span></li>
-            </ul>
+      <div class="appWrapper">
+        <div class="mainBody">
+          <h1 id="city-display">Toronto</h1>
+          <h2 id="country-display">Canada</h2>
+          <ul class="topDisplay">
+            <li id="date-display">Tuesday, July 13, 2021</li>
+            <li id="time-display">9:43</li>
+            <li id="note-display">Clear</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <span id="weather-image"
+                ><img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt=""
+              /></span>
+              <span id="main-temp">20 </span
+              ><span id="temp-unit"
+                ><a href="" class="tempConvert">°C</a> |
+                <a href="" class="tempConvert">°F</a></span
+              >
+            </div>
+            <div class="col-6">
+              <ul class="sideDisplay">
+                <li>Precipitation: <span id="precipitation">40%</span></li>
+                <li>Wind Speed: <span id="windspeed">20 km/h</span></li>
+                <li>Humidity: <span id="humidity">65%</span></li>
+              </ul>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="footer">
+        <a href="" class="codeLink">Open-source code</a> by Stephanie Chow
       </div>
     </div>
     <script src="src/app.js"></script>

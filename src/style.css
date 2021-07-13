@@ -19,17 +19,18 @@ ul {
   padding: 5px;
 }
 
+.appWrapper {
+  max-width: 700px;
+  margin: 40px 20px 10px 20px;
+}
+
 .mainBody {
   max-width: 700px;
   padding: 20px;
   border: 1px solid #70757a88;
-  margin: 40px auto;
+
   border-radius: 20px;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(251, 222, 238) 15.6%,
-    rgb(206, 201, 226) 80.3%
-  );
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 .topDisplay {
@@ -42,15 +43,27 @@ ul {
 
 .sideDisplay {
   font-size: 15px;
+  margin: 0px;
 }
 
-#noteDisplay {
+.footer {
+  font-size: 12px;
+  font-style: italic;
+  padding: 0px 0px 0px 20px;
+}
+
+#note-display {
   font-size: 25px;
   padding: 10px 0px 0px 0px;
+}
+
+#weather-image {
+  float: left;
 }
 
 #main-temp {
   font-size: 65px;
   font-weight: bold;
   margin-left: 20px;
+  line-height: 60px;
 }
