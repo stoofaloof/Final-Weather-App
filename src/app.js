@@ -17,6 +17,16 @@ function currentWeather(response) {
     response.data.wind.speed * 3.6
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+
+  document
+    .querySelector("#weather-image")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#weather-image")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 axios.get(apiUrl).then(currentWeather);
@@ -64,4 +74,4 @@ function currentDate(datestamp) {
   document.querySelector("#time-display").innerHTML = `${hour}:${minutes}`;
 }
 
-console.log(currentDate(now));
+currentDate(now);

@@ -30,7 +30,7 @@ ul {
   border: 1px solid #70757a88;
 
   border-radius: 20px;
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
 }
 
 .topDisplay {
@@ -66,7 +66,7 @@ ul {
   font-size: 65px;
   font-weight: bold;
   margin-left: 20px;
-  line-height: 60px;
+  line-height: 88px;
 }
 
 #temp-unit {
