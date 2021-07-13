@@ -1,3 +1,56 @@
+body {
+  color: #70757a;
+  font-family: "Montserrat", sans-serif;
+}
+
 h1 {
-    color: red;
+  display: inline;
+  font-size: 50px;
+}
+
+h2 {
+  display: inline;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 5px;
+}
+
+.mainBody {
+  max-width: 700px;
+  padding: 20px;
+  border: 1px solid #70757a88;
+  margin: 40px auto;
+  border-radius: 20px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(251, 222, 238) 15.6%,
+    rgb(206, 201, 226) 80.3%
+  );
+}
+
+.topDisplay {
+  font-size: 15px;
+}
+
+.tempConvert {
+  font-size: 20px;
+}
+
+.sideDisplay {
+  font-size: 15px;
+}
+
+#noteDisplay {
+  font-size: 25px;
+  padding: 10px 0px 0px 0px;
+}
+
+#main-temp {
+  font-size: 65px;
+  font-weight: bold;
+  margin-left: 20px;
 }
