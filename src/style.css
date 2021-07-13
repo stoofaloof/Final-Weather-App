@@ -49,12 +49,13 @@ ul {
 .footer {
   font-size: 12px;
   font-style: italic;
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 23px;
 }
 
 #note-display {
   font-size: 25px;
   padding: 10px 0px 0px 0px;
+  text-transform: capitalize;
 }
 
 #weather-image {
@@ -66,4 +67,8 @@ ul {
   font-weight: bold;
   margin-left: 20px;
   line-height: 60px;
+}
+
+#temp-unit {
+  margin-left: 15px;
 }
