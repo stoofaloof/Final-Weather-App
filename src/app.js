@@ -4,9 +4,10 @@ function currentWeather(response) {
   document.querySelector("#city-display").innerHTML = response.data.name;
   document.querySelector("#country-display").innerHTML =
     response.data.sys.country;
-  document.querySelector("#main-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
+
+  celciusTemp = Math.round(response.data.main.temp);
+  document.querySelector("#main-temp").innerHTML = `${celciusTemp}`;
+
   document.querySelector("#note-display").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#feels-like").innerHTML = Math.round(
@@ -107,3 +108,24 @@ document
   .addEventListener("click", logCurrent);
 
 navigator.geolocation.getCurrentPosition(geoWeather);
+
+// Unit Conversion
+
+let celciusTemp = null;
+
+function fconvertTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
+  document.querySelector("#main-temp").innerHTML = `${fahrenheitTemp}`;
+}
+
+function cconvertTemp(event) {
+  event.preventDefault();
+  document.querySelector("#main-temp").innerHTML = `${celciusTemp}`;
+}
+
+let fConvert = document.querySelector("#f-convert");
+fConvert.addEventListener("click", fconvertTemp);
+
+let cConvert = document.querySelector("#c-convert");
+cConvert.addEventListener("click", cconvertTemp);

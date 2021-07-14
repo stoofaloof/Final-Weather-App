@@ -19,6 +19,16 @@ ul {
   padding: 5px;
 }
 
+a {
+  color: #70757a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fa7672;
+  font-weight: bolder;
+}
+
 .appWrapper {
   margin: 40px 20px 10px 20px;
   max-width: 700px;
@@ -53,6 +63,11 @@ ul {
   font-size: 12px;
   font-style: italic;
   padding: 0px 0px 0px 23px;
+}
+
+.footer a {
+  color: #fa7672;
+  text-decoration: underline;
 }
 
 #city-display {
