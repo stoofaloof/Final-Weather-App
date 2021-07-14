@@ -20,17 +20,20 @@ ul {
 }
 
 .appWrapper {
-  max-width: 700px;
   margin: 40px 20px 10px 20px;
+  max-width: 700px;
 }
 
 .mainBody {
+  background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+  border: 1px solid #70757a88;
+  border-radius: 20px;
   max-width: 700px;
   padding: 20px;
-  border: 1px solid #70757a88;
+}
 
-  border-radius: 20px;
-  background: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+.mainHeader {
+  margin: 15px 0px 0px 0px;
 }
 
 .topDisplay {
@@ -52,6 +55,10 @@ ul {
   padding: 0px 0px 0px 23px;
 }
 
+#city-display {
+  text-transform: capitalize;
+}
+
 #note-display {
   font-size: 25px;
   padding: 10px 0px 0px 0px;
@@ -65,8 +72,8 @@ ul {
 #main-temp {
   font-size: 65px;
   font-weight: bold;
-  margin-left: 20px;
   line-height: 88px;
+  margin-left: 20px;
 }
 
 #temp-unit {

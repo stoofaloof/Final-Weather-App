@@ -20,17 +20,40 @@
     />
     <link rel="stylesheet" href="src/style.css" />
   </head>
+
   <body>
     <div class="container">
       <div class="appWrapper">
         <div class="mainBody">
-          <h1 id="city-display">Toronto</h1>
-          <h2 id="country-display">Canada</h2>
-          <ul class="topDisplay">
-            <li id="date-display">Monday, July 12, 2021</li>
-            <li id="time-display">9:43</li>
-            <li id="note-display">Clear</li>
-          </ul>
+          <form class="md-3" id="form-input">
+            <div class="row">
+              <div class="col-10">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Enter your city"
+                  id="search-city"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary"
+                  id="search-button"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="mainHeader">
+            <h1 id="city-display">Toronto</h1>
+            <h2 id="country-display">Canada</h2>
+            <ul class="topDisplay">
+              <li id="date-display">Monday, July 12, 2021</li>
+              <li id="time-display">9:43</li>
+              <li id="note-display">Clear</li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
               <img src="" alt="" id="weather-image" />

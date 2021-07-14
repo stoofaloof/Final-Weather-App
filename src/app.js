@@ -1,10 +1,8 @@
 // Current Weather x Open Weather API
 
-let city = "toronto";
-let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 function currentWeather(response) {
+  document.querySelector("#country-display").innerHTML =
+    response.data.sys.country;
   document.querySelector("#main-temp").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -17,7 +15,6 @@ function currentWeather(response) {
     response.data.wind.speed * 3.6
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-
   document
     .querySelector("#weather-image")
     .setAttribute(
@@ -28,8 +25,6 @@ function currentWeather(response) {
     .querySelector("#weather-image")
     .setAttribute("alt", response.data.weather[0].description);
 }
-
-axios.get(apiUrl).then(currentWeather);
 
 // Set Current Date and Time
 
@@ -75,3 +70,19 @@ function currentDate(datestamp) {
 }
 
 currentDate(now);
+
+// Search Engine
+
+function searchCity(event) {
+  event.preventDefault();
+  let input = document.querySelector("#search-city");
+  let city = input.value;
+  let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  document.querySelector("#city-display").innerHTML = `${city}`;
+  axios.get(apiUrl).then(currentWeather);
+}
+
+let form = document.querySelector("#form-input");
+form.addEventListener("submit", searchCity);
