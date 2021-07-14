@@ -1,6 +1,7 @@
 // Current Weather x Open Weather API
 
 function currentWeather(response) {
+  document.querySelector("#city-display").innerHTML = response.data.name;
   document.querySelector("#country-display").innerHTML =
     response.data.sys.country;
   document.querySelector("#main-temp").innerHTML = Math.round(
@@ -80,7 +81,6 @@ function searchCity(event) {
   let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  document.querySelector("#city-display").innerHTML = `${city}`;
   axios.get(apiUrl).then(currentWeather);
 }
 
@@ -92,10 +92,18 @@ form.addEventListener("submit", searchCity);
 function geoWeather(coordinates) {
   let lat = coordinates.coords.latitude;
   let long = coordinates.coords.longitude;
-
   let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(currentWeather);
 }
+
+function logCurrent() {
+  navigator.geolocation.getCurrentPosition(geoWeather);
+}
+
+document
+  .querySelector("#geolocation-button")
+  .addEventListener("click", logCurrent);
 
 navigator.geolocation.getCurrentPosition(geoWeather);
