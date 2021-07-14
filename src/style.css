@@ -63,6 +63,7 @@ a:hover {
 .sideDisplay {
   font-size: 15px;
   margin: 0px;
+  padding: 10px 0px 0px 65px;
 }
 
 .footer {
@@ -74,6 +75,15 @@ a:hover {
 .footer a {
   color: #fa7672;
   text-decoration: underline;
+}
+
+#search-button {
+  background-color: #fa7672;
+  border: 1px solid #fa7672;
+}
+
+#search-button:hover {
+  background-color: #fa5b55;
 }
 
 #city-display {
