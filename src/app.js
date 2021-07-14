@@ -86,3 +86,16 @@ function searchCity(event) {
 
 let form = document.querySelector("#form-input");
 form.addEventListener("submit", searchCity);
+
+// Geolocation
+
+function geoWeather(coordinates) {
+  let lat = coordinates.coords.latitude;
+  let long = coordinates.coords.longitude;
+
+  let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(currentWeather);
+}
+
+navigator.geolocation.getCurrentPosition(geoWeather);
