@@ -20,7 +20,7 @@ ul {
 }
 
 a {
-  color: #70757a;
+  color: #fa7672;
   text-decoration: none;
 }
 
@@ -50,8 +50,14 @@ a:hover {
   font-size: 15px;
 }
 
-.tempConvert {
-  font-size: 20px;
+.active {
+  color: #70757a;
+  cursor: default;
+  font-weight: bolder;
+}
+
+.active:hover {
+  color: #70757a;
 }
 
 .sideDisplay {
@@ -92,5 +98,6 @@ a:hover {
 }
 
 #temp-unit {
+  font-size: 20px;
   margin-left: 15px;
 }

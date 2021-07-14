@@ -115,6 +115,9 @@ let celciusTemp = null;
 
 function fconvertTemp(event) {
   event.preventDefault();
+
+  cConvert.classList.remove("active");
+  fConvert.classList.add("active");
   let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
   document.querySelector("#main-temp").innerHTML = `${fahrenheitTemp}`;
 }
