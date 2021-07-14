@@ -10,9 +10,10 @@ function currentWeather(response) {
 
   document.querySelector("#note-display").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#feels-like").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
+
+  celciusFeelsLikeTemp = Math.round(response.data.main.feels_like);
+  document.querySelector("#feels-like").innerHTML = `${celciusFeelsLikeTemp}°C`;
+
   document.querySelector("#windspeed").innerHTML = Math.round(
     response.data.wind.speed * 3.6
   );
@@ -112,20 +113,29 @@ navigator.geolocation.getCurrentPosition(geoWeather);
 // Unit Conversion
 
 let celciusTemp = null;
+let celciusFeelsLikeTemp = null;
 
 function fconvertTemp(event) {
   event.preventDefault();
+
   cConvert.classList.remove("active");
   fConvert.classList.add("active");
   let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
   document.querySelector("#main-temp").innerHTML = `${fahrenheitTemp}`;
+
+  let fahrenheitFeelsLikeTemp = Math.round((celciusFeelsLikeTemp * 9) / 5 + 32);
+  document.querySelector(
+    "#feels-like"
+  ).innerHTML = `${fahrenheitFeelsLikeTemp}°F`;
 }
 
 function cconvertTemp(event) {
   event.preventDefault();
+
   cConvert.classList.add("active");
   fConvert.classList.remove("active");
   document.querySelector("#main-temp").innerHTML = `${celciusTemp}`;
+  document.querySelector("#feels-like").innerHTML = `${celciusFeelsLikeTemp}°C`;
 }
 
 let fConvert = document.querySelector("#f-convert");
