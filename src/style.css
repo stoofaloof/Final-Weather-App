@@ -66,6 +66,29 @@ a:hover {
   padding: 10px 0px 0px 65px;
 }
 
+.forecastWeather {
+  padding-top: 20px;
+}
+
+.forecastDay {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.forecastTemp {
+  font-size: 14px;
+  text-align: center;
+}
+
+.maxForecastTemp {
+  font-weight: bold;
+}
+
+.forecastWeatherIcon {
+  max-width: 90%;
+}
+
 .footer {
   font-size: 12px;
   font-style: italic;
