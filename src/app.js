@@ -149,22 +149,22 @@ cConvert.addEventListener("click", cconvertTemp);
 // Forecast Set-Up
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastData = response.data.daily;
   let forecastHTML = `<div class=row>`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
+
+  forecastData.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-              <h5 class="forecastDay">${day}</h5>
+              <h5 class="forecastDay">${forecastDay.dt}</h5>
               <img
-                src="http://openweathermap.org/img/wn/02d@2x.png"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                 alt=""
                 class="forecastWeatherIcon"
               />
               <div class="forecastTemp">
-                <span class="maxForecastTemp">40°C</span> /
-                <span class="minForecastTemp">30°C</span>
+                <span class="maxForecastTemp">${forecastDay.temp.max}°C</span> /
+                <span class="minForecastTemp">${forecastDay.temp.min}°C</span>
               </div>
             </div>`;
   });
