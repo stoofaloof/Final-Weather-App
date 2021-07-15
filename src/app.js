@@ -168,10 +168,10 @@ function displayForecast(response) {
               <div class="forecastTemp">
                 <span class="maxForecastTemp">${Math.round(
                   forecastDay.temp.max
-                )}°C</span> /
+                )}°</span> /
                 <span class="minForecastTemp">${Math.round(
                   forecastDay.temp.min
-                )}°C</span>
+                )}°</span>
               </div>
             </div>`;
     }
