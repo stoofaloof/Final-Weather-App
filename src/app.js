@@ -143,3 +143,30 @@ fConvert.addEventListener("click", fconvertTemp);
 
 let cConvert = document.querySelector("#c-convert");
 cConvert.addEventListener("click", cconvertTemp);
+
+// Forecast Set-Up
+
+function displayForecast() {
+  let forecastHTML = `<div class=row>`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <h5 class="forecastDay">${day}</h5>
+              <img
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                alt=""
+                class="forecastWeatherIcon"
+              />
+              <div class="forecastTemp">
+                <span class="maxForecastTemp">40°C</span> /
+                <span class="minForecastTemp">30°C</span>
+              </div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector("#forecast-display").innerHTML = forecastHTML;
+}
+
+displayForecast();
