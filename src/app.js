@@ -152,21 +152,29 @@ function displayForecast(response) {
   let forecastData = response.data.daily;
   let forecastHTML = `<div class=row>`;
 
-  forecastData.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-              <h5 class="forecastDay">${forecastDay.dt}</h5>
+  forecastData.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <h5 class="forecastDay">${formatForecast(forecastDay.dt)}</h5>
               <img
-                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
                 alt=""
                 class="forecastWeatherIcon"
               />
               <div class="forecastTemp">
-                <span class="maxForecastTemp">${forecastDay.temp.max}°C</span> /
-                <span class="minForecastTemp">${forecastDay.temp.min}°C</span>
+                <span class="maxForecastTemp">${Math.round(
+                  forecastDay.temp.max
+                )}°C</span> /
+                <span class="minForecastTemp">${Math.round(
+                  forecastDay.temp.min
+                )}°C</span>
               </div>
             </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   document.querySelector("#forecast-display").innerHTML = forecastHTML;
@@ -179,4 +187,12 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayForecast);
+}
+
+function formatForecast(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+
+  return day;
 }
