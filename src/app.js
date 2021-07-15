@@ -27,6 +27,8 @@ function currentWeather(response) {
   document
     .querySelector("#weather-image")
     .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 // Set Current Date and Time
@@ -146,7 +148,8 @@ cConvert.addEventListener("click", cconvertTemp);
 
 // Forecast Set-Up
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastHTML = `<div class=row>`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
@@ -169,4 +172,11 @@ function displayForecast() {
   document.querySelector("#forecast-display").innerHTML = forecastHTML;
 }
 
-displayForecast();
+// Forecast API Set-Up
+
+function getForecast(coordinates) {
+  let apiKey = "5c1e7eee50bb2935f340cf0e657b8b02";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
